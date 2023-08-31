@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, Image, Modal} from 'react-native';
+import { StyleSheet, Text, View, Image, Button, TextInput} from 'react-native';
 import { Table, Row, Rows } from 'react-native-table-component';
+
 
 export default class App extends Component {
   constructor(props) {
@@ -28,13 +29,37 @@ export default class App extends Component {
           <Row data={state.tableHead} style={styles.head} textStyle={styles.text}/>
           <Rows data={state.tableData} textStyle={styles.text}/>
         </Table>
+        <Button title="Mira más productos" color="#841584" accessibilityLabel="Se muestran más productos"/>
+        <Text>{"\n"}</Text>
+        <Text>{"\n"}</Text>
+        <Text style={{fontSize: 20, fontWeight: 'bold', color: 'green'}}>{"Ingresa tu usuario:"}</Text>
+        <TextInput
+        placeholder='Usuario'
+        style={style.input}
+      /><Text style={{fontSize: 20, fontWeight: 'bold', color: 'green'}}>{"Contraseña:"}</Text>
+      <TextInput
+        style={style.input}
+        placeholder="Contraseña"
+        keyboardType="numeric"
+      />
+      <Button title="Iniciar sesion" color="red" accessibilityLabel="Inicio de sesion"/>
+
       </View>
     )
   }
 }
 
+
 const styles = StyleSheet.create({
   container: { flex: 1, padding: 16, paddingTop: 30, backgroundColor: '#fff' },
   head: { height: 40, backgroundColor: '#f1f8ff' },
   text: { margin: 6 }
+});
+const style = StyleSheet.create({
+  input: {
+    height: 40,
+    margin: 12,
+    borderWidth: 1,
+    padding: 10,
+  },
 });
