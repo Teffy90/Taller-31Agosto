@@ -22,7 +22,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 //APIs para el CRUD de Products
 Route::get('/products', [ProductController::class, 'index']);
-Route::get('/products/{id}', [ProductController::class, 'show']);
 
 //APIs para el CRUD de Categories
 Route::get('/categories', [CategoryController::class, 'index']);
