@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, Image, Button, TextInput} from 'react-native';
 import { Table, Row, Rows } from 'react-native-table-component';
+import Button2 from './componentes/Button2';
+import ImgenInicial from './componentes/ImgenInicial';
+import Formulario from './componentes/Formulario';
 
 
 export default class App extends Component {
@@ -21,29 +24,15 @@ export default class App extends Component {
     const state = this.state;
     return (
       <View style={styles.container}>
-        <Text style={{fontSize: 30, fontWeight: 'bold', color: 'red'}}>Productos</Text>
-        <Image source={{uri: 'https://cdn-icons-png.flaticon.com/512/1312/1312307.png'}} style={{width: 112, height: 112}}></Image>
-        <Text>{"\n"}</Text>
+        <ImgenInicial/>
         <Text style={{fontSize: 20, fontWeight: 'bold', color: 'blue'}}>Tabla de Productos</Text>
         <Table borderStyle={{borderWidth: 2, borderColor: '#c8e1ff'}}>
           <Row data={state.tableHead} style={styles.head} textStyle={styles.text}/>
           <Rows data={state.tableData} textStyle={styles.text}/>
         </Table>
-        <Button title="Mira más productos" color="#841584" accessibilityLabel="Se muestran más productos"/>
+        <Button2/>
         <Text>{"\n"}</Text>
-        <Text>{"\n"}</Text>
-        <Text style={{fontSize: 20, fontWeight: 'bold', color: 'green'}}>{"Ingresa tu usuario:"}</Text>
-        <TextInput
-        placeholder='Usuario'
-        style={style.input}
-      /><Text style={{fontSize: 20, fontWeight: 'bold', color: 'green'}}>{"Contraseña:"}</Text>
-      <TextInput
-        style={style.input}
-        placeholder="Contraseña"
-        keyboardType="numeric"
-      />
-      <Button title="Iniciar sesion" color="red" accessibilityLabel="Inicio de sesion"/>
-
+        <Formulario/>
       </View>
     )
   }

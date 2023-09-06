@@ -21,7 +21,7 @@ php artisan serve
 Nota:
 Para levantar el proyecto de React Native que se encuentra en la carpeta del Frontend se deben correr los siguientes comandos:
 
-Instalar dependencias: npm install
+Instalar dependencias: npm install / yarn install
 
 Instalar ambiente web: npx expo install react-native-web@~0.19.6 react-dom@18.2.0 @expo/webpack-config
 
